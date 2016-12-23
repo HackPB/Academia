@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Academia</string>
+    <string name="No">Não</string>
+    <string name="Yes">Sim</string>
+    <string name="Exit">Exit!</string>
+    <string name="Exitmsg">Tem a certeza que deseja sair?</string>
+
+</resources>
