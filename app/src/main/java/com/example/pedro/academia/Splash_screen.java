@@ -3,8 +3,6 @@ package com.example.pedro.academia;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.InflateException;
-import android.view.View;
 import android.widget.RelativeLayout;
 
 public class Splash_screen extends AppCompatActivity {
