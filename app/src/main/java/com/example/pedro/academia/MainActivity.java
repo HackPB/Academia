@@ -3,14 +3,18 @@ package com.example.pedro.academia;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeRefreshLayout; //swipe
@@ -18,16 +22,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       //site to see
-        final WebView myWebView = (WebView) findViewById(R.id.webview);
-        myWebView.loadUrl("http://www.academiadasapostas.com");
 
-        //settings to site
-        WebSettings webSettings = myWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setDomStorageEnabled(true); //to open the content of livescoresmenu (DOM Storage)
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.setWebChromeClient(new WebChromeClient());
+        final WebView myWebView = (WebView) findViewById(R.id.webview);
+
+           //settings to site
+           WebSettings webSettings = myWebView.getSettings();
+           webSettings.setJavaScriptEnabled(true);
+           webSettings.setDomStorageEnabled(true); //to open the content of livescoresmenu (DOM Storage)
+           //myWebView.setWebViewClient(new WebViewClient());
+           myWebView.setWebChromeClient(new WebChromeClient());
+           //site to see
+           myWebView.loadUrl("http://www.academiadasapostas.com");
+
+           myWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+           if (Build.VERSION.SDK_INT >= 19){
+               myWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+           }/*else {
+               myWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+           }*/
+
+           final ImageView splash = (ImageView) findViewById(R.id.splash);
+           new Handler().postDelayed(new Runnable() {
+               @Override
+               public void run() {
+                   splash.setVisibility(View.INVISIBLE);
+               }
+           },2000);
+
+
 
         //myWebView.setWebViewClient(new NoGo());
 

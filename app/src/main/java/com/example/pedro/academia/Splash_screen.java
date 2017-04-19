@@ -1,6 +1,7 @@
 package com.example.pedro.academia;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RelativeLayout;
@@ -11,25 +12,16 @@ public class Splash_screen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
 
-        Thread myThread = new Thread(){
+
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
-                    sleep(3000);
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                Intent intent = new Intent(Splash_screen.this,MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+                finish();
             }
-        };
-
-        myThread.start();
-        //faded start:
-        RelativeLayout splash = (RelativeLayout) findViewById(R.id.activity_splash_screen);
-        splash.animate().alpha(0f).setDuration(3200);
+        },20);
     }
 }
