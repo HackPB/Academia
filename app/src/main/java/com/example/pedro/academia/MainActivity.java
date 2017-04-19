@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     .show();
         }
     }
-    //Client definition and no go to other site
+    //Client definition and no go to other site - a rever
     private class NoGo extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
