@@ -19,7 +19,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.academia.pedro.notification",
-            "certificate_hash": "DD56326AE17430DEB668F167A1519F40F2668D77"
+            "certificate_hash": "dd56326ae17430deb668f167a1519f40f2668d77"
           }
         },
         {
@@ -59,11 +59,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "1056113337194-k09cf2u3oo0va8au228fvo8bs9kkc2ca.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pedro.academia",
+            "certificate_hash": "8cc999c71b439fa44aa7dfec2909eb7b05808712"
+          }
+        },
+        {
+          "client_id": "1056113337194-6jktle6sb20jn6dvqpt17fhgs7vp37c1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pedro.academia",
+            "certificate_hash": "b7b32cdaa7c5bdba289863ad9680a3f1e3fe2b4b"
+          }
+        },
+        {
           "client_id": "1056113337194-8jq8ltpjbhp7jn6cuq4jnr5qbhq5elr1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.pedro.academia",
-            "certificate_hash": "DD56326AE17430DEB668F167A1519F40F2668D77"
+            "certificate_hash": "dd56326ae17430deb668f167a1519f40f2668d77"
           }
         },
         {
